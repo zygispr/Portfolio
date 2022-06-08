@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <h1 id="title">Weather</h1>
+        <div class="city-select">
+            <input type="text" class="form-control mr-2 mr-sm-2" id="city-input" placeholder="Enter city name" />
+            <button onclick="searchLocation()" type="button" class="btn btn-light">Search</button>
+        </div>
+        <button onclick="getCurrentLocation()" type="button" id="logInButton" class="btn btn-light mt-2">Get current location</button>
+
+        <div class="location">
+            <h2 class="location-name"></h2>
+            <span id="weather-icon"></span>
+        </div>
+
+        <div class="temperature">
+            <div class="degree-section">
+                <h2 class="temperature-degree"></h2>
+            </div>
+            <div class="temperature-description"></div>
+            <div class="high-low-section">
+                <div class="high-temperature-degree"></div>
+                <div class="low-temperature-degree"></div>
+            </div>
+        </div>
+
+        <div class="hourly-forecast-whole">
+            <span>HOURLY FORECAST</span>
+            <div class="hourly-forecast-section">
+                <div class="hourly-forecast-container">
+                    <span onclick="hourlyForecastShift('left')" class="hourly-forecast-button"><</span>
+                </div>
+                <div class="hourly-forecast-container">
+                    <div class="hourly-forecast-time"></div>
+                    <span class="hourly-forecast-icon"></span>
+                    <div class="hourly-forecast-degree"></div>
+                </div>
+                <div class="hourly-forecast-container">
+                    <div class="hourly-forecast-time"></div>
+                    <span class="hourly-forecast-icon"></span>
+                    <div class="hourly-forecast-degree"></div>
+                </div>
+                <div class="hourly-forecast-container">
+                    <div class="hourly-forecast-time"></div>
+                    <span class="hourly-forecast-icon"></span>
+                    <div class="hourly-forecast-degree"></div>
+                </div>
+                <div class="hourly-forecast-container">
+                    <div class="hourly-forecast-time"></div>
+                    <span class="hourly-forecast-icon"></span>
+                    <div class="hourly-forecast-degree"></div>
+                </div>
+                <div class="hourly-forecast-container">
+                    <div class="hourly-forecast-time"></div>
+                    <span class="hourly-forecast-icon"></span>
+                    <div class="hourly-forecast-degree"></div>
+                </div>
+                <div class="hourly-forecast-container">
+                    <span onclick="hourlyForecastShift('right')" class="hourly-forecast-button">></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="daily-forecast-whole">
+            <span>DAILY FORECAST</span>
+            <div class="daily-forecast-section">
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+                <div class="daily-forecast-container">
+                    <div class="daily-forecast-day"></div>
+                    <span class="daily-forecast-icon"></span>
+                    <div class="daily-forecast-degree-interval">
+                        <div class="daily-forecast-degree-min"></div>
+                        <span></span>
+                        <div class="daily-forecast-degree-max"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-section-1">
+            <div class="uv-index-section">
+                <span>UV INDEX</span>
+                <div class="uv-index-container">
+                    <div class="uv-index"></div>
+                    <div class="uv-index-description"></div>
+                </div>
+            </div>
+            <div class="sunrise-sunset-section">
+                <span></span>
+                <div class="sunrise-sunset-container">
+                    <div class="sunrise-sunset-main"></div>
+                    <div class="sunrise-sunset-second"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-section-2">
+            <div class="feels-like-section">
+                <span>FEELS LIKE</span>
+                <div class="feels-like-degree"></div>
+            </div>
+            <div class="humidity-section">
+                <span>HUMIDITY</span>
+                <div class="humidity-container">
+                    <div class="humidity-main"></div>
+                    <div class="humidity-second"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="additional-section-3">
+            <div class="visibility-section">
+                <span>VISIBILITY</span>
+                <div class="visibility-distance"></div>
+            </div>
+            <div class="wind-section">
+                <span>WIND</span>
+                <div class="wind-container">
+                    <div class="wind-speed"></div>
+                    <div class="wind-direction"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

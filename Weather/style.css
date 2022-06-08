@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%; /* So it's full screen */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#ffa17f, #00223e);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white !important;
+    user-select: none;
+    opacity: 0;
+    overflow: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#title {
+    opacity: 1 !important;
+}
+
+.temperature,
+.hourly-forecast-whole,
+.daily-forecast-whole,
+.uv-index-section,
+.sunrise-sunset-section,
+.feels-like-section,
+.humidity-section,
+.visibility-section,
+.wind-section {
+    border: #00223e 2px solid;
+    border-radius: 20px;
+}
+
+button:focus {
+    /* Apatinės dvi eilutės pašalina mygtuko paryškinimą jį paspaudus */
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button:active {
+    background-color: lightgray !important;
+}
+
+.city-select {
+    display: flex;
+    width: 50%;
+    /* margin-top: 50px; */
+}
+
+.location,
+.temperature {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.location {
+    /* height: 20vh; */
+    height: 150px;
+}
+
+.temperature {
+    flex-direction: column;
+    /* height: 20vh; */
+    height: 150px;
+}
+
+.degree-section {
+    display: flex;
+    align-items: center;
+}
+
+.degree-section > h2 {
+    font-size: 40pt;
+    margin: 0;
+}
+
+.degree-section > span {
+    /* margin: 10px; */
+    font-size: 40pt;
+}
+
+.high-low-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.high-temperature-degree,
+.low-temperature-degree {
+    text-align: center;
+}
+
+.hourly-forecast-whole,
+.daily-forecast-whole,
+.additional-section-1,
+.additional-section-2,
+.additional-section-3 {
+    width: 50%;
+    /* height: 15vh; */
+    height: 124px;
+    margin-top: 10px;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.hourly-forecast-whole > span,
+.daily-forecast-whole > span,
+.uv-index-section > span,
+.sunrise-sunset-section > span,
+.feels-like-section > span,
+.humidity-section > span,
+.visibility-section > span,
+.wind-section > span {
+    opacity: 0.5;
+}
+
+.hourly-forecast-section {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    /* height: 10vh; */
+    align-items: center;
+}
+
+.hourly-forecast-button {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.hourly-forecast-button:active {
+    color: gray;
+}
+
+.hourly-forecast-icon > img,
+.daily-forecast-icon > img {
+    width: 36px;
+}
+
+.daily-forecast-whole {
+    /* height: 40vh; */
+    height: 324px;
+}
+
+.daily-forecast-section {
+    display: flex;
+    /* height: 35vh; */
+    /* height: 450px; */
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.daily-forecast-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.daily-forecast-day {
+    width: 44px;
+}
+
+.daily-forecast-degree-interval {
+    width: 90px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.daily-forecast-degree-min,
+.daily-forecast-degree-interval > span,
+.daily-forecast-degree-max {
+    display: flex;
+    width: 30px;
+}
+
+.daily-forecast-degree-min {
+    justify-content: start;
+}
+.daily-forecast-degree-interval > span {
+    justify-content: center;
+}
+
+.daily-forecast-degree-max {
+    justify-content: end;
+}
+
+.additional-section-1,
+.additional-section-2,
+.additional-section-3 {
+    width: 50%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+}
+
+.uv-index-section,
+.sunrise-sunset-section,
+.feels-like-section,
+.humidity-section,
+.visibility-section,
+.wind-section {
+    width: 48%;
+    padding-top: 4px;
+}
+
+.uv-index,
+.sunrise-sunset-main,
+.feels-like-degree,
+.humidity-main,
+.visibility-distance,
+.wind-speed {
+    font-size: 18pt;
+}

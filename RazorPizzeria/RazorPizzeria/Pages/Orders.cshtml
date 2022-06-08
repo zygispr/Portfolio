@@ -1,0 +1,33 @@
+@page
+@using RazorPizzeria.Models
+@model RazorPizzeria.Pages.OrdersModel
+@{
+    // ViewData["Title"] = "Orders";
+    // Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="mainText text-center">
+    <h1 class="display-4">Orders</h1>
+    <hr>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Pizza name</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model.PizzaOrders)
+    {
+        <tr>
+            <td>@order.Id</td>
+            <td>@order.PizzaName</td>
+            <td>@order.BasePrice€</td>
+        </tr>
+    }
+    </tbody>
+</table>
+

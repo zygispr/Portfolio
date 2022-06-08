@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.calculator {
+    display: grid;
+    grid-template-rows: 2fr repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgb(40, 40, 40);
+    border-radius: 12px;
+    font-size: 24pt;
+    /* font-size: 18pt; */
+    color: white;
+    /* height: 322px; */
+    /* width: 234px; */
+    height: 500px;
+    width: 350px;
+    user-select: none;
+    outline: black 1px solid;
+}
+
+#display {
+    grid-column: 1 / 5;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    font-size: 60pt;
+    padding: 12px 12px 4px 12px;
+}
+
+.calculator>div:not(:first-child) {
+    display: grid;
+    place-items: center;
+    outline: black 1px solid;
+}
+
+
+/* #ac {
+    grid-column: 1 / 3;
+} */
+
+.calculator>div:not(:first-child).zero {
+    display: grid;
+    grid-column: 1 / 3;
+    border-bottom-left-radius: 12px;
+}
+
+.calculator>div:not(:first-child)#equals {
+    border-bottom-right-radius: 12px;
+}
+
+.calculator>.number,
+.calculator>#decimal {
+    background-color: gray;
+}
+
+.calculator>#ac,
+.calculator>#delete,
+.calculator>#pm {
+    background-color: rgb(70, 70, 70);
+}
+
+.calculator>.operator {
+    background-color: orange;
+}
+
+.calculator>.number:active,
+.calculator>#decimal:active {
+    background-color: lightgray;
+}
+
+.calculator>#ac:active,
+.calculator>#delete:active,
+.calculator>#pm:active {
+    background-color: gray;
+}
+
+.calculator>.operator:active {
+    background-color: rgb(252, 209, 128);
+}
+
+.calculator>div,
+.calculator>div:active {
+    transition: 50ms;
+}

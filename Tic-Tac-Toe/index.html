@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div></div>
+    <div id="whole-board">
+        <div id="title">Tic-Tac-Toe</div>
+        <div id="score-container">
+            <div id="x-container">
+                <div class="xy">x</div>
+                <div id="x-score"></div>
+            </div>
+            <div id="y-container">
+                <div class="xy">y</div>
+                <div id="y-score"></div>
+            </div>
+        </div>
+        <div id="square-container">
+            <div onclick="squarePressed(0)" class="square" id="top-left"></div>
+            <div onclick="squarePressed(1)" class="square" id="top"></div>
+            <div onclick="squarePressed(2)" class="square" id="top-right"></div>
+            <div onclick="squarePressed(3)" class="square" id="left"></div>
+            <div onclick="squarePressed(4)" class="square" id="center"></div>
+            <div onclick="squarePressed(5)" class="square" id="right"></div>
+            <div onclick="squarePressed(6)" class="square" id="bottom-left"></div>
+            <div onclick="squarePressed(7)" class="square" id="bottom"></div>
+            <div onclick="squarePressed(8)" class="square" id="bottom-right"></div>
+        </div>
+        <div id="winner-text">Template text</div>
+        <div class="button-container">
+            <div onclick="reset()" id="reset">Reset!</div>
+            <div onclick="clearScore()" id="clear-score">Clear score</div>
+        </div>
+    </div>
+    <div></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
