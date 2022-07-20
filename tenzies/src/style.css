@@ -14,10 +14,6 @@ body {
 }
 
 main {
-    /* width: 80vw; */
-    /* height: 80vw; */
-    /* max-width: 600px; */
-    /* max-height: 600px; */
     width: 500px;
     height: 500px;
     background-color: #F5F5F5;
@@ -25,7 +21,7 @@ main {
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -36,6 +32,7 @@ main {
 
 .instructions {
     font-size: 18px;
+    margin: 0;
 }
 
 .dice-container {
@@ -43,7 +40,7 @@ main {
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(5, auto);
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .die {
@@ -64,7 +61,7 @@ main {
     background-color: #5035FF;
     border:none;
     height: 60px;
-    width: 120px;
+    width: 180px;
     color: white;
     border-radius: 8px;
     font-size: 1.5rem;
@@ -76,4 +73,8 @@ main {
 
 .dice-roll:active {
     background-color: #3b1dff;
+}
+
+.rollcount {
+    font-size: 1.5rem;
 }
